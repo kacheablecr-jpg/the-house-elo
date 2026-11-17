@@ -9,18 +9,22 @@
     :root { --fondo:#140e0a; --card:#21170f; --borde:#3a2a1c; --texto:#f3ebe1; --sub:#bba995; --naranja:#f29a2e; }
     * { box-sizing:border-box; margin:0; padding:0; }
     body { font-family:system-ui,-apple-system,"Segoe UI",Roboto,sans-serif; background:var(--fondo); color:var(--texto); line-height:1.55; padding:0 16px 48px; }
-    main { max-width:760px; margin:0 auto; }
+    main { max-width:780px; margin:0 auto; }
     header { text-align:center; padding:28px 0 8px; }
     header img { width:100%; max-width:520px; border-radius:12px; }
     h1 { font-size:26px; margin:18px 0 6px; }
     .sub { color:var(--sub); }
     .card { background:var(--card); border:1px solid var(--borde); border-radius:14px; padding:20px; margin-top:18px; }
-    .card h2 { font-size:20px; margin-bottom:6px; }
-    .boton { display:inline-block; margin-top:14px; background:var(--naranja); color:#1b1006; font-weight:700; font-size:18px; text-decoration:none; padding:14px 22px; border-radius:10px; }
-    .meta { color:var(--sub); font-size:13px; margin-top:10px; word-break:break-all; }
-    ol { padding-left:22px; } li { margin:6px 0; }
+    .card h2 { font-size:21px; margin-bottom:10px; }
+    .app { display:flex; flex-wrap:wrap; align-items:center; justify-content:space-between; gap:12px; padding:14px 0; border-top:1px solid var(--borde); }
+    .app:first-of-type { border-top:0; }
+    .app p { color:var(--sub); font-size:14px; max-width:430px; }
+    .app h3 { font-size:17px; }
+    .boton { display:inline-block; background:var(--naranja); color:#1b1006; font-weight:700; text-decoration:none; padding:11px 18px; border-radius:10px; white-space:nowrap; }
+    .opcional { background:transparent; color:var(--naranja); border:2px solid var(--naranja); }
+    ol { padding-left:22px; } li { margin:7px 0; }
     b { color:#ffd9a8; }
-    .aviso { border-color:#6b4a1f; }
+    .nota { color:var(--sub); font-size:14px; margin-top:10px; }
   </style>
 </head>
 <body>
@@ -28,38 +32,65 @@
   <header>
     <img src="logo.jpg" alt="The House – Mariscos &amp; Parrillada">
     <h1>Apps para la ELO de la caja</h1>
-    <p class="sub">Abra esta página <b>en la propia ELO</b> y descargue las dos apps.</p>
+    <p class="sub">Descárguelas en una computadora, cópielas en una llave USB e instálelas en la ELO.</p>
   </header>
 
   <section class="card">
-    <h2>1. Impresora Loyverse</h2>
-    <p>Permite que Loyverse imprima en la impresora interna de la ELO y abra la caja. Arranca sola al encender la ELO y abre Loyverse.</p>
-    <a class="boton" href="impresora-loyverse.apk" download>Descargar Impresora Loyverse</a>
-    <p class="meta">Versión 1.0.0 · 233 KB · SHA-256 be5462f0f8279e1e382674818f67deb94467e40b12f5327a3a37c5cf9c812d62</p>
+    <h2>Paso 1 · Descargar en la computadora</h2>
+
+    <div class="app">
+      <div><h3>1. Impresora Loyverse</h3><p>Loyverse imprime en la impresora interna de la ELO y abre la caja. Arranca sola al encender la ELO.</p></div>
+      <a class="boton" href="impresora-loyverse.apk" download>Descargar</a>
+    </div>
+    <div class="app">
+      <div><h3>2. Pantalla de espera The House</h3><p>Muestra el logo de The House cuando nadie usa la ELO. Al tocarla vuelve a Loyverse.</p></div>
+      <a class="boton" href="pantalla-espera-the-house.apk" download>Descargar</a>
+    </div>
+    <div class="app">
+      <div><h3>3. AnyDesk</h3><p>Para darle soporte a distancia. Descarga oficial de AnyDesk.</p></div>
+      <a class="boton" href="https://download.anydesk.com/anydesk.apk">Descargar</a>
+    </div>
+    <div class="app">
+      <div><h3>4. Explorador de archivos (Material Files)</h3><p>Para ver y abrir archivos en la ELO. Gratuito, descarga oficial.</p></div>
+      <a class="boton" href="https://github.com/zhanghai/MaterialFiles/releases/download/v1.7.5/app-release-universal.apk">Descargar</a>
+    </div>
+    <div class="app">
+      <div><h3>5. Google Chrome (opcional)</h3><p>Navegador para la ELO. Busque la versión <b>119.0.6045.194</b> y elija la variante <b>arm64-v8a + armeabi-v7a</b>, APK (no "bundle").</p></div>
+      <a class="boton opcional" href="https://www.apkmirror.com/?post_type=app_release&amp;searchtype=apk&amp;s=chrome+119.0.6045.194" target="_blank" rel="noopener">Ir a APKMirror</a>
+    </div>
   </section>
 
   <section class="card">
-    <h2>2. Pantalla de espera The House</h2>
-    <p>Cuando nadie usa la ELO, muestra el logo de The House. Al tocar la pantalla vuelve a Loyverse.</p>
-    <a class="boton" href="pantalla-espera-the-house.apk" download>Descargar Pantalla de espera</a>
-    <p class="meta">Versión 1.0.0 · 377 KB · SHA-256 8b3a2524ee5ba8117e435641bd0a70651a9be790699a3d580cda260fb057dedf</p>
-  </section>
-
-  <section class="card">
-    <h2>Cómo instalar</h2>
+    <h2>Paso 2 · Copiar a la llave USB</h2>
     <ol>
-      <li>Toque el botón de descarga. Al terminar, abra el archivo descargado.</li>
-      <li>Si Android pide permiso para <b>instalar apps de origen desconocido</b>, actívelo para el navegador y vuelva atrás.</li>
-      <li>Toque <b>Instalar</b>. Repita con la segunda app.</li>
-      <li>Abra <b>Impresora Loyverse</b> una vez. Si aparece un aviso de permiso USB, marque "usar siempre" y toque <b>Aceptar</b>. Debe decir <b>"Impresora Star conectada y lista"</b>.</li>
-      <li>En Loyverse: <b>Configuración → Impresoras → Agregar impresora</b>, modelo <b>Star TSP143IIILAN (Ethernet)</b>, dirección IP <b>127.0.0.1</b>. Guarde y toque <b>Imprimir prueba</b>.</li>
-      <li>En <b>Impresora Loyverse</b> puede tocar <b>Comprobar impresora</b> cuando quiera verificar que todo responde.</li>
+      <li>Abra la carpeta <b>Descargas</b> de la computadora.</li>
+      <li>Copie los archivos <b>.apk</b> descargados a la llave USB.</li>
     </ol>
   </section>
 
-  <section class="card aviso">
+  <section class="card">
+    <h2>Paso 3 · Instalar en la ELO</h2>
+    <ol>
+      <li>Conecte la llave USB a la ELO.</li>
+      <li>Abra <b>Ajustes → Almacenamiento</b>, toque la llave USB y luego <b>Explorar</b>. (Si aparece un aviso de USB al conectarla, también puede tocar <b>Explorar</b> ahí.)</li>
+      <li>Toque cada archivo <b>.apk</b>. Si Android pide permiso para <b>instalar apps de origen desconocido</b>, actívelo y vuelva atrás.</li>
+      <li>Toque <b>Instalar</b>. Instálelas en el orden de la lista: primero la Impresora.</li>
+    </ol>
+  </section>
+
+  <section class="card">
+    <h2>Paso 4 · Dejar lista la impresora</h2>
+    <ol>
+      <li>Abra <b>Impresora Loyverse</b>. Si aparece un aviso de permiso USB, marque "usar siempre" y toque <b>Aceptar</b>. Debe decir <b>"Impresora Star conectada y lista"</b>.</li>
+      <li>En Loyverse: <b>Configuración → Impresoras → Agregar impresora</b>, modelo <b>Star TSP143IIILAN (Ethernet)</b>, dirección IP <b>127.0.0.1</b>. Guarde y toque <b>Imprimir prueba</b>.</li>
+      <li>Desde ese momento, al encender la ELO se abre Loyverse y los tiquetes salen en la impresora interna.</li>
+    </ol>
+    <p class="nota">Si algún día no imprime, abra <b>Impresora Loyverse</b> y toque <b>Comprobar impresora</b>.</p>
+  </section>
+
+  <section class="card">
     <h2>Si la pantalla de espera no se instala</h2>
-    <p>Si Android dice que la app <b>ya existe</b> o que hay un <b>conflicto</b>, la ELO todavía tiene el video de fábrica de Elo. Vaya a <b>Ajustes → Aplicaciones → PayPoint Video → Desinstalar</b> e intente de nuevo. Si no aparece la opción, comuníquese con soporte: lo hacemos nosotros a distancia.</p>
+    <p>Si Android dice que la app <b>ya existe</b> o que hay un <b>conflicto</b>, la ELO todavía tiene el video de fábrica de Elo. Vaya a <b>Ajustes → Aplicaciones → PayPoint Video → Desinstalar</b> e intente de nuevo. Si no aparece esa opción, abra <b>AnyDesk</b> y comuníquese con soporte: lo hacemos nosotros a distancia.</p>
   </section>
 </main>
 </body>
